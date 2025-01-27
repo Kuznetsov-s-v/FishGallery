@@ -2,6 +2,7 @@
     <string name="app_name">FishGallery</string>
     <string name="settings_title">Настройки</string>
     <string name="header_title">Компания “Blue Rose”</string>
+    <string name="header_title_2">Компания Blue Rose</string>
     <string name="footer_title">С заботой, Blue Rose</string>
     <string name="our_catch_title">Наш улов</string>
     <string name="our_profit_title">Наша прибыль</string>

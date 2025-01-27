@@ -3,6 +3,7 @@
     <string name="app_name">FishGallery</string>
     <string name="settings_title">Settings</string>
     <string name="header_title">Company \"Blue Rose\"</string>
+    <string name="header_title_2">Company Blue Rose</string>
     <string name="footer_title">With care, Blue Rose</string>
     <string name="our_catch_title">Our catch</string>
     <string name="our_profit_title">Our profit</string>
