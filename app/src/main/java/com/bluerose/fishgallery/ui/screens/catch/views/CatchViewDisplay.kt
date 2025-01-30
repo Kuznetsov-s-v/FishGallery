@@ -17,7 +17,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -34,26 +33,23 @@ data class FishData(
     val imagePath: String
 )
 
-@Composable
-fun getFishDataList(): List<FishData> {
-    return listOf(
-        FishData(
-            label = "Призрачный дельфи",
-            text = stringResource(id = com.bluerose.fishgallery.R.string.our_catch_value).replace("%s", "50 000 000 "),
-            imagePath = "Fish1.jpg"
-        ),
-        FishData(
-            label = "Алмазный ус",
-            text = stringResource(id = com.bluerose.fishgallery.R.string.our_catch_value).replace("%s", "48 000 000"),
-            imagePath = "Fish2.jpg"
-        ),
-        FishData(
-            label = "Шестиперая аку",
-            text = stringResource(id = com.bluerose.fishgallery.R.string.our_catch_value).replace("%s", "10 000 000"),
-            imagePath = "Fish3.jpg"
-        )
+val fishDataList = listOf(
+    FishData(
+        label = "Призрачный дельфи",
+        text = "50 000 000 тонн",
+        imagePath = "Fish1.jpg"
+    ),
+    FishData(
+        label = "Алмазный ус",
+        text = "48 000 000 тонн",
+        imagePath = "Fish2.jpg"
+    ),
+    FishData(
+        label = "Шестиперая аку",
+        text = "10 000 000 тонн",
+        imagePath = "Fish3.jpg"
     )
-}
+)
 
 
 @Composable
@@ -81,7 +77,7 @@ fun CatchViewDisplay(){
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = stringResource(com.bluerose.fishgallery.R.string.our_catch_title),
+                    text = "Наш улов",
                     color = MaterialTheme.colorScheme.onPrimary,
                     style = TextStyle(
                         fontFamily = fonts,
@@ -92,8 +88,10 @@ fun CatchViewDisplay(){
                     )
                 )
             }
+
+
         }
-        getFishDataList().forEach { fish ->
+        fishDataList.forEach { fish ->
             CatchCard(
                 label = fish.label,
                 text = fish.text,
@@ -101,12 +99,14 @@ fun CatchViewDisplay(){
             )
         }
     }
+
+
 }
 
-@Preview(showBackground = true, locale = "en")
+@Preview(showBackground = true)
 @Composable
 fun CatchViewDisplayPreview() {
-      FishGalleryTheme(darkTheme = false, dynamicColor = false, ) {
+    FishGalleryTheme(darkTheme = false, dynamicColor = false, ) {
         CatchViewDisplay()
     }
 }
